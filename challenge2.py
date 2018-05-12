@@ -4,13 +4,8 @@ expected_output_hex = "746865206b696420646f6e277420706c6179"
 
 
 def xor_two_hexes(input_1, input_2):
-
-    bin1 = bin(int(input_1, 16))
-    bin2 = bin(int(input_2, 16))
-
-    xor_bin = bin(int(bin1, 2) ^ int(bin2, 2))
-    xor_int = int(xor_bin, 2)
-    xor_hex_string = format(xor_int, 'x')
+    xor_bin = bin(int(input_1, 16) ^ int(input_2, 16))
+    xor_hex_string = format(int(xor_bin, 2), 'x')
     return xor_hex_string
 
 
