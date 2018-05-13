@@ -1,8 +1,6 @@
 string1 = "this is a test"
 string2 = "wokka wokka!!!"
 
-len_string = max([len(string1), len(string2)])
-
 bin_1_a = ''.join([format(ord(c), 'b').zfill(8) for c in string1])
 bin_2_a = ''.join([format(ord(c), 'b').zfill(8) for c in string2])
 
