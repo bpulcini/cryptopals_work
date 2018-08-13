@@ -10,5 +10,4 @@ def xor_two_hexes(input_1, input_2):
 
 
 if __name__ == '__main__':
-    print xor_two_hexes(str_1_hex, str_2_hex) == expected_output_hex
-
+    print(xor_two_hexes(str_1_hex, str_2_hex) == expected_output_hex)
