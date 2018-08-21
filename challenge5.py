@@ -1,4 +1,5 @@
 from challenge2 import xor_two_hexes
+import binascii
 
 phrase = "Burning 'em, if you ain't quick and nimble\nI go crazy when I hear a cymbal"
 
@@ -8,8 +9,9 @@ expected = "0b3637272a2b2e63622c2e69692a23693a2a3c6324202d623d63343c2a2622632427
 
 xor_key = (key * len(phrase))[:len(phrase)]
 
-phrase_hex = phrase.encode('hex')
+phrase_bin = bytes(phrase, 'utf-8')
+phrase_hex = binascii.b2a_hex(phrase_bin)
 
-xor_encoded_message = xor_two_hexes(phrase_hex, xor_key.encode('hex')).zfill(len(phrase_hex))
+xor_encoded_message = xor_two_hexes(phrase_hex, binascii.b2a_hex(xor_key.encode('utf-8'))).zfill(len(phrase_hex))
 
-print xor_encoded_message == expected
+print(xor_encoded_message == expected)
